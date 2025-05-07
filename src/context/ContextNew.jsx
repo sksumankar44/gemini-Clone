@@ -56,22 +56,6 @@ const ContextProvider = ({ children }) => {
         return [...new Set(updated)];
       });
 
-      // **
-      // let response;
-      // if (prompt !== undefined) {
-      //   response = await runChat(prompt);
-      //   setRecentPrompt(prompt);
-      //   setPrevPrompt((prev) => [...prev, prompt]);
-      // } else {
-      //   response = await runChat(input);
-      //   setRecentPrompt(input);
-      //   setPrevPrompt((prev) => [...prev, input]);
-      // }
-
-      //Not inc
-      // setRecentPrompt(input);
-      // setPrevPrompt((prev) => [...prev, prompt]);
-
       // const response = await runChat(input);
       let responseArray = response.split("**");
       let newResponse = "";
@@ -99,10 +83,6 @@ const ContextProvider = ({ children }) => {
     }
   };
 
-  // ✅ Give prompt here for testing
-  //   useEffect(() => {
-  //     onSent("What is React JS?");
-  //   }, []);
   const contextValue = {
     prevprompt,
     setPrevPrompt,
